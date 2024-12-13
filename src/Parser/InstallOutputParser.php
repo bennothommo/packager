@@ -58,13 +58,7 @@ class InstallOutputParser implements Parser
                 $action = strtolower($matches[1]);
                 $package = $matches[2];
                 $version = trim($matches[6]);
-                if (strpos($version, ' ') !== false) {
-                    $version = explode(' ', $version)[0];
-                }
                 $newVersion = isset($matches[8]) ? trim($matches[8]) : null;
-                if (isset($newVersion) && strpos($newVersion, ' ') !== false) {
-                    $newVersion = explode(' ', $newVersion)[0];
-                }
 
                 if ($section === 'lock') {
                     switch ($action) {
